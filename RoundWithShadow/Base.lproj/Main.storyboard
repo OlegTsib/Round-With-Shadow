@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RoundWithShadow" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S38-VT-PIT">
+                                <rect key="frame" x="82" y="328" width="250" height="250"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wM2-St-Ygi" customClass="RoundWithShadow" customModule="RoundWithShadow" customModuleProvider="target">
+                                        <rect key="frame" x="37.5" y="37.5" width="175" height="175"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vMT-UN-62N">
+                                                <rect key="frame" x="0.0" y="0.0" width="175" height="175"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image-1465348_960_720.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="cw1-Dn-imy">
+                                                        <rect key="frame" x="0.0" y="0.0" width="175" height="175"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="cw1-Dn-imy" firstAttribute="centerX" secondItem="vMT-UN-62N" secondAttribute="centerX" id="885-Du-vKe"/>
+                                                    <constraint firstItem="cw1-Dn-imy" firstAttribute="width" secondItem="vMT-UN-62N" secondAttribute="width" id="KTY-9Q-KI5"/>
+                                                    <constraint firstItem="cw1-Dn-imy" firstAttribute="centerY" secondItem="vMT-UN-62N" secondAttribute="centerY" id="kZm-Du-nGf"/>
+                                                    <constraint firstItem="cw1-Dn-imy" firstAttribute="height" secondItem="vMT-UN-62N" secondAttribute="height" id="qcN-42-VhB"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="vMT-UN-62N" firstAttribute="centerY" secondItem="wM2-St-Ygi" secondAttribute="centerY" id="M2d-HS-FV0"/>
+                                            <constraint firstItem="vMT-UN-62N" firstAttribute="centerX" secondItem="wM2-St-Ygi" secondAttribute="centerX" id="lRS-ld-Lv8"/>
+                                            <constraint firstItem="vMT-UN-62N" firstAttribute="height" secondItem="wM2-St-Ygi" secondAttribute="height" id="oSe-hz-gpW"/>
+                                            <constraint firstItem="vMT-UN-62N" firstAttribute="width" secondItem="wM2-St-Ygi" secondAttribute="width" id="yUS-cY-qGX"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="circleView" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetWidth">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOffsetHeight">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shadowActive" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="GF6-2H-cQR"/>
+                                    <constraint firstItem="wM2-St-Ygi" firstAttribute="centerX" secondItem="S38-VT-PIT" secondAttribute="centerX" id="HC3-PS-bUj"/>
+                                    <constraint firstAttribute="width" constant="250" id="Mz1-fJ-RkQ"/>
+                                    <constraint firstItem="wM2-St-Ygi" firstAttribute="width" secondItem="S38-VT-PIT" secondAttribute="width" multiplier="0.7" id="Tuv-yh-WW7"/>
+                                    <constraint firstItem="wM2-St-Ygi" firstAttribute="height" secondItem="S38-VT-PIT" secondAttribute="height" multiplier="0.7" id="YQl-wE-SST"/>
+                                    <constraint firstItem="wM2-St-Ygi" firstAttribute="centerY" secondItem="S38-VT-PIT" secondAttribute="centerY" id="yOB-Aq-ZnF"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="S38-VT-PIT" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="QlB-nn-STf"/>
+                            <constraint firstItem="S38-VT-PIT" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="t1z-I6-BPd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="image-1465348_960_720.jpg" width="230.39999389648438" height="154.08000183105469"/>
+    </resources>
+</document>

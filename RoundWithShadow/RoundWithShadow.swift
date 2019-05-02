@@ -87,42 +87,15 @@ class RoundWithShadow: UIView
         case frame(CGRect)
     }
     
-    convenience override init(frame: CGRect)
+    override init(frame: CGRect)
     {
-        self.init(.frame(frame))
+        super.init(frame: frame)
         setupView()
     }
     
     required init?(coder aDecoder: NSCoder)
     {
         super.init(coder: aDecoder)
-        
-        borderWidth  = CGFloat(aDecoder.decodeDouble(forKey: CoderKeys.borderWidth .description))
-        cornerRadius = CGFloat(aDecoder.decodeDouble(forKey: CoderKeys.cornerRadius.description))
-        borderColor  = UIColor(coder: aDecoder) ?? UIColor.clear
-        circleView   = aDecoder.decodeBool(forKey: CoderKeys.circleView.description)
-        shadowActive = aDecoder.decodeBool(forKey: CoderKeys.shadowActive.description)
-        shadowColor  = UIColor(coder: aDecoder) ?? UIColor.clear
-    }
-    
-    override func encode(with aCoder: NSCoder)
-    {
-        aCoder.encode(borderWidth , forKey: CoderKeys.borderWidth .description)
-        aCoder.encode(cornerRadius, forKey: CoderKeys.cornerRadius.description)
-        aCoder.encode(borderColor , forKey: CoderKeys.borderColor .description)
-        aCoder.encode(shadowColor , forKey: CoderKeys.shadowColor .description)
-        aCoder.encode(circleView  , forKey: CoderKeys.circleView  .description)
-        aCoder.encode(shadowActive, forKey: CoderKeys.shadowActive.description)
-        super.encode(with: aCoder)
-    }
-    
-    private init(_ initMethod: InitMethod)
-    {
-        switch initMethod
-        {
-        case let .coder(coder): super.init(coder: coder)!
-        case let .frame(frame): super.init(frame: frame)
-        }
     }
     
     override func layoutSubviews()
@@ -138,25 +111,39 @@ class RoundWithShadow: UIView
             self.layer.cornerRadius = cornerRadius
         }
         
-        self.layer.masksToBounds = false
-        
         self.layer.borderColor = borderColor.cgColor
         self.layer.borderWidth = borderWidth
-        
+
         if shadowActive
         {
             shapeLayer.removeFromSuperlayer()
             
             shapeLayer.cornerRadius    = self.layer.cornerRadius
             shapeLayer.frame           = bounds
-            shapeLayer.masksToBounds   = false
             shapeLayer.shadowColor     = self.shadowColor.cgColor
             shapeLayer.shadowOffset    = CGSize(width: shadowOffsetWidth, height: shadowOffsetHeight)
             shapeLayer.shadowOpacity   = self.shadowOpacity
             shapeLayer.backgroundColor = self.backgroundColor?.cgColor
             shapeLayer.shadowRadius    = self.shadowRadius
             
-            self.layer.addSublayer(shapeLayer)
+            self.layer.insertSublayer(shapeLayer, above: self.layer)
+            
+        }
+        
+        for i in self.subviews
+        {
+            if circleView
+            {
+                i.layer.cornerRadius = frame.height / 2
+            }
+            else
+            {
+                i.layer.cornerRadius = cornerRadius
+            }
+            
+            i.layer.masksToBounds = true
+            
+            self.insertSubview(i, aboveSubview: self)
         }
     }
     
