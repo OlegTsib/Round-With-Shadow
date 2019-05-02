@@ -9,6 +9,8 @@ import UIKit
 
 class RoundWithShadow: UIView
 {
+    private let shapeLayer = CAShapeLayer()
+    
     // MARK: Inspectable properties
     private enum CoderKeys : String , CustomStringConvertible
     {
@@ -135,6 +137,7 @@ class RoundWithShadow: UIView
         {
             self.layer.cornerRadius = cornerRadius
         }
+        
         self.layer.masksToBounds = false
         
         self.layer.borderColor = borderColor.cgColor
@@ -142,7 +145,7 @@ class RoundWithShadow: UIView
         
         if shadowActive
         {
-            let shapeLayer = CAShapeLayer()
+            shapeLayer.removeFromSuperlayer()
             
             shapeLayer.cornerRadius    = self.layer.cornerRadius
             shapeLayer.frame           = bounds
