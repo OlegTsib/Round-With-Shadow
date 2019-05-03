@@ -10,19 +10,7 @@ import UIKit
 class RoundWithShadow: UIView
 {
     private let shapeLayer = CAShapeLayer()
-    
-    // MARK: Inspectable properties
-    private enum CoderKeys : String , CustomStringConvertible
-    {
-        case borderWidth
-        case borderColor
-        case cornerRadius
-        case circleView
-        case shadowActive
-        case shadowColor
-        var description: String { return rawValue }
-    }
-    
+ 
     @IBInspectable var borderWidth: CGFloat = 0.0 {
         didSet {
             setNeedsDisplay()
@@ -81,12 +69,6 @@ class RoundWithShadow: UIView
     }
 
     // MARK: - Initialization
-    private enum InitMethod
-    {
-        case coder(NSCoder)
-        case frame(CGRect)
-    }
-    
     override init(frame: CGRect)
     {
         super.init(frame: frame)
@@ -102,14 +84,7 @@ class RoundWithShadow: UIView
     {
         super.layoutSubviews()
 
-        if circleView
-        {
-           self.layer.cornerRadius = frame.height / 2
-        }
-        else
-        {
-            self.layer.cornerRadius = cornerRadius
-        }
+        setCornersRadius(self)
         
         self.layer.borderColor = borderColor.cgColor
         self.layer.borderWidth = borderWidth
@@ -132,17 +107,7 @@ class RoundWithShadow: UIView
         
         for i in self.subviews
         {
-            if circleView
-            {
-                i.layer.cornerRadius = frame.height / 2
-            }
-            else
-            {
-                i.layer.cornerRadius = cornerRadius
-            }
-            
-            i.layer.masksToBounds = true
-            
+            setCornersRadius(i, masksToBounds: true)
             self.insertSubview(i, aboveSubview: self)
         }
     }
@@ -157,5 +122,19 @@ class RoundWithShadow: UIView
     private func setupView()
     {
         self.setNeedsDisplay()
+    }
+    
+    private func setCornersRadius(_ view: UIView, masksToBounds: Bool = false)
+    {
+        if circleView
+        {
+            view.layer.cornerRadius = frame.height / 2
+        }
+        else
+        {
+            view.layer.cornerRadius = cornerRadius
+        }
+        
+        view.layer.masksToBounds = masksToBounds
     }
 }
