@@ -9,8 +9,6 @@ import UIKit
 
 class RoundWithShadow: UIView
 {
-    private let shapeLayer = CAShapeLayer()
- 
     @IBInspectable var borderWidth: CGFloat = 0.0 {
         didSet {
             setNeedsDisplay()
@@ -91,17 +89,10 @@ class RoundWithShadow: UIView
 
         if shadowActive
         {
-            shapeLayer.removeFromSuperlayer()
-            
-            shapeLayer.cornerRadius    = self.layer.cornerRadius
-            shapeLayer.frame           = bounds
-            shapeLayer.shadowColor     = self.shadowColor.cgColor
-            shapeLayer.shadowOffset    = CGSize(width: shadowOffsetWidth, height: shadowOffsetHeight)
-            shapeLayer.shadowOpacity   = self.shadowOpacity
-            shapeLayer.backgroundColor = self.backgroundColor?.cgColor
-            shapeLayer.shadowRadius    = self.shadowRadius
-            
-            self.layer.insertSublayer(shapeLayer, above: self.layer)
+            self.layer.shadowColor     = self.shadowColor.cgColor
+            self.layer.shadowOffset    = CGSize(width: shadowOffsetWidth, height: shadowOffsetHeight)
+            self.layer.shadowOpacity   = self.shadowOpacity
+            self.layer.shadowRadius    = self.shadowRadius
         }
         
         self.subviews.forEach { (subView) in
@@ -109,7 +100,6 @@ class RoundWithShadow: UIView
             if let container = subView as? RoundWithShadowContainerView
             {
                 setCornersRadius(container, masksToBounds: true)
-                self.insertSubview(container, aboveSubview: self)
                 return
             }
         }

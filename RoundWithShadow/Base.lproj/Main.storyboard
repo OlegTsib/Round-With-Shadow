@@ -75,7 +75,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="GF6-2H-cQR"/>
                                     <constraint firstItem="wM2-St-Ygi" firstAttribute="centerX" secondItem="S38-VT-PIT" secondAttribute="centerX" id="HC3-PS-bUj"/>
