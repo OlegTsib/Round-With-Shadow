@@ -102,13 +102,16 @@ class RoundWithShadow: UIView
             shapeLayer.shadowRadius    = self.shadowRadius
             
             self.layer.insertSublayer(shapeLayer, above: self.layer)
-            
         }
         
-        for i in self.subviews
-        {
-            setCornersRadius(i, masksToBounds: true)
-            self.insertSubview(i, aboveSubview: self)
+        self.subviews.forEach { (subView) in
+            
+            if let container = subView as? RoundWithShadowContainerView
+            {
+                setCornersRadius(container, masksToBounds: true)
+                self.insertSubview(container, aboveSubview: self)
+                return
+            }
         }
     }
     

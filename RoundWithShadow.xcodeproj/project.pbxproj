@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C17A8DC2498053200B1F498 /* RoundWithShadowContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C17A8DB2498053200B1F498 /* RoundWithShadowContainerView.swift */; };
 		7CE18638227B7BEF00021CC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE18637227B7BEF00021CC7 /* AppDelegate.swift */; };
 		7CE1863A227B7BEF00021CC7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE18639227B7BEF00021CC7 /* ViewController.swift */; };
 		7CE1863D227B7BEF00021CC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CE1863B227B7BEF00021CC7 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7C17A8DB2498053200B1F498 /* RoundWithShadowContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundWithShadowContainerView.swift; sourceTree = "<group>"; };
 		7CE18634227B7BEF00021CC7 /* RoundWithShadow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoundWithShadow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CE18637227B7BEF00021CC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CE18639227B7BEF00021CC7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				7CE18649227B7BFA00021CC7 /* RoundWithShadow.swift */,
+				7C17A8DB2498053200B1F498 /* RoundWithShadowContainerView.swift */,
 				7CE18637227B7BEF00021CC7 /* AppDelegate.swift */,
 				7CE18639227B7BEF00021CC7 /* ViewController.swift */,
 				7CE1864D227B7DF100021CC7 /* image-1465348_960_720.jpg */,
@@ -143,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CE1863A227B7BEF00021CC7 /* ViewController.swift in Sources */,
+				7C17A8DC2498053200B1F498 /* RoundWithShadowContainerView.swift in Sources */,
 				7CE18638227B7BEF00021CC7 /* AppDelegate.swift in Sources */,
 				7CE1864A227B7BFA00021CC7 /* RoundWithShadow.swift in Sources */,
 			);
